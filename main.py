@@ -1,27 +1,29 @@
 from servicios import *
 
-def menu():
-    while True:
-        print("\n--- PhotoCampus ---")
-        print("1. Agregar servicio")
-        print("2. Listar servicios")
-        print("3. Editar servicio")
-        print("4. Eliminar servicio")
-        print("5. Salir")
+while True:
 
-        op = input("Seleccione opción: ")
+    print(
+        "---PhotoCampus---\n"
+        "1. Agregar Servicio\n"
+        "2. Listar Servicio\n"
+        "3. Editar Servicio\n"
+        "4. Eliminar Servicio\n"
+        "5. Salir"
+    )
 
-        if op == "1":
+    opcion = int(input("Digite su opcion: "))
+
+    match opcion:
+        case 1:
             agregar_servicio()
-        elif op == "2":
+        case 2:
             listar_servicios()
-        elif op == "3":
+        case 3:
             editar_servicio()
-        elif op == "4":
+        case 4: 
             eliminar_servicio()
-        elif op == "5":
+        case 5:
+            print("Saliendo...")
             break
-        else:
-            print("Opción inválida")
-
-menu()
+        case _:
+            print("Error, opcion invalida")
